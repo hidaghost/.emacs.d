@@ -7,13 +7,15 @@
 (when (>= emacs-major-version 24)
   (require 'package)
   (package-initialize)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+  (setq package-archives '(("melpa" . "http://elpa.emacs-china.org/gnu/")
+			   ("gnu" . "http://elpa.emacs-china.org/melpa/")))
   )
 (require 'cl)
 ;; add whatever packages you want here
 (defvar hida/packages '(
 			company
 			monokai-theme
+			solarized-theme
 			)
   "Default packages"
   )
