@@ -103,15 +103,26 @@
 ;;;;;; mode settings ;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;;;;;;;;;;;;;;; org mode ;;;;;;;;;;;;;;;;
 ;; highlight syntax
 (require 'org)
 (setq org-src-fontify-natively t)
 
+;; 设置默认 Org Agenda 文件目录
+(setq org-agenda-files '("~/org"))
+
+;; 设置 org-agenda 打开快捷键
+(global-set-key (kbd "C-c a") 'org-agenda)
+;;;;;;;;;;;;;;;; org mode ;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;; js2 mode ;;;;;;;;;;;;;;;;
 ;; js2-mode
 (setq auto-mode-alist
       (append
        '(("\\.js\\'" . js2-mode))
        auto-mode-alist))
+;;;;;;;;;;;;;;;; js2 mode ;;;;;;;;;;;;;;;;
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; Packages settings ;;;;
