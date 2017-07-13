@@ -27,6 +27,9 @@
 			swiper
 			counsel
 
+			;; popwin (enhanced window pop)
+			popwin
+			
 			;; js2-mode (for javascript coding)
 			js2-mode
 			
@@ -54,6 +57,9 @@
     )
   )
 
+;; auto show changes in outer files
+(global-auto-revert-mode t)
+
 ;; bind some usual keys for code search
 (global-set-key (kbd "C-h C-f") 'find-function)
 (global-set-key (kbd "C-h C-v") 'find-variable)
@@ -63,7 +69,7 @@
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
 
 ;; show match parenthesis(emacs lisp mode)
-(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+;;(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
 ;; turn off splash screen
 (setq inhibit-splash-screen t)
@@ -93,8 +99,9 @@
 (setq recentf-max-menu-item 10)
 ;; (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
-;; cancel backup files save 
+;; disable auto save & backup files 
 (setq make-backup-files nil)
+(setq auto-save-default nil)
 
 ;; load theme
 (load-theme 'solarized-light t)
@@ -149,3 +156,7 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+
+;; popwin
+(require 'popwin)
+(popwin-mode t)
