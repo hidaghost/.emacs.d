@@ -12,10 +12,15 @@
 
 ;; show match parenthesis(emacs lisp mode)
 ;;(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+(show-paren-mode t)
 
 ;; disable auto save & backup files 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+
+;; dired mode
+(put 'dired-find-alternate-file 'disabled nil)
+(require 'dired-x)
 
 ;;;;;;;;;;;;;;;; js2 mode ;;;;;;;;;;;;;;;;
 ;; js2-mode
